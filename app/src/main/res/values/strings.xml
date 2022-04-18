@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Covid19Riskmeter</string>
+    <string name="verify_password">Verify Password</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="register_info">Please enter your e-mail address and define a password.</string>
+</resources>
