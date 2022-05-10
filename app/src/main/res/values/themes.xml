@@ -17,4 +17,17 @@
         <item name="android:windowLightNavigationBar">true</item>
         <!-- Customize your theme here. -->
     </style>
+
+    <style name="Theme.Covid19Riskmeter.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+    <style name="circleImageViewStyle" >
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">85%</item>
+    </style>
+
+    <style name="Theme.Covid19Riskmeter.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="Theme.Covid19Riskmeter.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 </resources>

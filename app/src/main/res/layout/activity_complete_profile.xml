@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CompleteProfileActivity">
+
+    <Button
+        android:id="@+id/btnContinue2"
+        android:layout_width="353dp"
+        android:layout_height="64dp"
+        android:layout_marginStart="29dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="29dp"
+        android:onClick="moveToHomePage"
+        android:text="@string/complete"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/switch1"
+        tools:ignore="DuplicateSpeakableTextCheck" />
+
+    <Spinner
+        android:id="@+id/spnGender4"
+        android:layout_width="320dp"
+        android:layout_height="59dp"
+        android:layout_marginStart="29dp"
+        android:layout_marginTop="9dp"
+        android:layout_marginEnd="29dp"
+        android:entries="@array/covidStatusTypes"
+
+
+        android:prompt="@string/gender_female"
+        android:tooltipText="Gender"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtInfo8" />
+
+    <TextView
+        android:id="@+id/txtInfo7"
+        android:layout_width="138dp"
+        android:layout_height="26dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="28dp"
+        android:text="@string/vaccination_status"
+        android:textColor="?android:textColorPrimary"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/spnGender2" />
+
+    <TextView
+        android:id="@+id/txtInfo8"
+        android:layout_width="138dp"
+        android:layout_height="26dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="28dp"
+        android:text="@string/covid_status"
+        android:textColor="?android:textColorPrimary"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/spnGender3" />
+
+    <Spinner
+        android:id="@+id/spnGender3"
+        android:layout_width="320dp"
+        android:layout_height="61dp"
+        android:layout_marginStart="29dp"
+        android:layout_marginTop="9dp"
+        android:layout_marginEnd="29dp"
+        android:entries="@array/vaccinationTypes"
+        android:prompt="@string/gender_female"
+
+
+        android:tooltipText="Gender"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtInfo7" />
+
+    <TextView
+        android:id="@+id/txtInfo6"
+        android:layout_width="138dp"
+        android:layout_height="26dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="25dp"
+        android:text="@string/blood_type"
+        android:textColor="?android:textColorPrimary"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtInfo5" />
+
+    <Spinner
+        android:id="@+id/spnGender2"
+        android:layout_width="320dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="29dp"
+        android:layout_marginTop="9dp"
+        android:layout_marginEnd="29dp"
+        android:entries="@array/bloodTypes"
+        android:prompt="@string/gender_female"
+        android:tooltipText="Gender"
+        app:layout_constraintEnd_toEndOf="parent"
+
+
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtInfo6" />
+
+    <TextView
+        android:id="@+id/txtInfo5"
+        android:layout_width="258dp"
+        android:layout_height="56dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="27dp"
+        android:text="@string/please_enter_your_health_information"
+        android:textColor="?android:textColorPrimary"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtTitle5" />
+
+    <TextView
+        android:id="@+id/txtTitle5"
+        android:layout_width="413dp"
+        android:layout_height="52dp"
+        android:layout_marginTop="80dp"
+        android:text="@string/complete_your_profile"
+        android:textAlignment="center"
+        android:textColor="?android:textColorPrimary"
+        android:textSize="34sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Switch
+        android:id="@+id/switch1"
+        android:layout_width="350dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="29dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="29dp"
+        android:minHeight="48dp"
+        android:text="@string/i_ve_had_covid_before"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/spnGender4" />
+</androidx.constraintlayout.widget.ConstraintLayout>

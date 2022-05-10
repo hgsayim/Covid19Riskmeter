@@ -6,4 +6,24 @@
     <string name="password">Password</string>
     <string name="register_info">Please enter your e-mail address and define a password.</string>
     <string name="sign_in">Sign In</string>
+    <string name="send_reset_link">Send Reset Link</string>
+    <string name="_continue">Continue</string>
+    <string name="age">Age</string>
+    <string name="gender_male">Male</string>
+    <string name="gender_female">Female</string>
+    <string name="name_surname">Name Surname</string>
+    <string name="CreateProfileInfo">Please enter your detailed individual information</string>
+    <string name="complete_your_profile">Complete your profile</string>
+    <string name="reset_your_password">Reset Your Password</string>
+    <string name="ForgotPasswordInfo">Please enter your registered mail address.</string>
+    <string name="complete">Complete</string>
+    <string name="vaccination_status">Vaccination Status</string>
+    <string name="blood_type">Blood Type</string>
+    <string name="covid_status">Covid Status</string>
+    <string name="i_ve_had_covid_before">I\'ve had covid before</string>
+    <string name="please_enter_your_health_information">Please enter your health information.</string>
+    <string name="title_activity_home">HomeActivity</string>
+    <string name="tab_text_1">Tab 1</string>
+    <string name="tab_text_2">Tab 2</string>
+    <string name="title_activity_maps">MapsActivity</string>
 </resources>

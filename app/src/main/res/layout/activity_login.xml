@@ -31,7 +31,6 @@
         android:importantForAutofill="yes"
         android:inputType="textEmailAddress"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtTitle2" />
 
@@ -47,7 +46,6 @@
         android:importantForAutofill="yes"
         android:inputType="textPassword"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtLoginEmail" />
 
@@ -59,6 +57,7 @@
         android:layout_marginTop="55dp"
         android:layout_marginEnd="29dp"
         android:text="@string/sign_in"
+        android:onClick="Log_in"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtInfo3"
@@ -71,12 +70,13 @@
         android:layout_marginStart="234dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="29dp"
+        android:clickable="true"
         android:text="Forgot Password?"
+        android:onClick="moveToForgotPassPage"
         android:textAlignment="center"
         android:textColor="?android:textColorPrimary"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtLoginPass" />
 </androidx.constraintlayout.widget.ConstraintLayout>

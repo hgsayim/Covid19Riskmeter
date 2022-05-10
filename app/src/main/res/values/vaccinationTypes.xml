@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="vaccinationTypes">
+        <item>Not vaccinated</item>
+        <item>1 dose</item>
+        <item>2 doses</item>
+        <item>3+ doses</item>
+    </string-array>
+
+</resources>
