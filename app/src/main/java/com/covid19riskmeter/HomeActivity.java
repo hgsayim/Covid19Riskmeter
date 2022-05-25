@@ -18,4 +18,10 @@ public class HomeActivity extends AppCompatActivity {
         Intent i = new Intent(this,MapsActivity.class);
         startActivity(i);
     }
+    public void moveToArticlePage(View view){
+        // article = Db.find article title,image,description
+
+        Intent i = new Intent(this,ArticleActivity.class);
+        startActivity(i);
+    }
 }
