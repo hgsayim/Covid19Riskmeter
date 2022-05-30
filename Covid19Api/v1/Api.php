@@ -71,7 +71,7 @@ if(isset($_GET['apicall'])){
                 $response['message'] = 'User addedd successfully';
 
                 //and we are getting all the heroes from the database in the response
-                // $response['heroes'] = $db->get();
+                $response['users'] = $db->get();
             }else{
 
                 //if record is not added that means there is an error
@@ -92,54 +92,13 @@ if(isset($_GET['apicall'])){
             $response['blogs'] = $db->getBlogs();
             break;
 
+
+
         case 'getLocations':
             $db = new DbOperation();
             $response['error'] = false;
             $response['message'] = 'Request successfully completed';
             $response['locations'] = $db->getLocations();
-            break;
-
-
-
-        //the UPDATE operation
-        case 'updateProfile':
-            isTheseParametersAvailable(array('firstName','lastName','email','password','age', 'covidStatusId'));
-            $db = new DbOperation();
-            $result = $db->updateProfile(
-                $_POST['fistName'],
-                $_POST['lastName'],
-                $_POST['email'],
-                $_POST['password'],
-                $_POST['age'],
-                $_POST['covidStatusId']
-            );
-
-            if($result){
-                $response['error'] = false;
-                $response['message'] = 'Hero updated successfully';
-
-            }else{
-                $response['error'] = true;
-                $response['message'] = 'Some error occurred please try again';
-            }
-            break;
-
-        //the UPDATE operation
-        case 'changePassword':
-            isTheseParametersAvailable(array('password'));
-            $db = new DbOperation();
-            $result = $db->changePassword(
-                $_POST['password']
-            );
-
-            if($result){
-                $response['error'] = false;
-                $response['message'] = 'Password updated successfully';
-
-            }else{
-                $response['error'] = true;
-                $response['message'] = 'Some error occurred please try again';
-            }
             break;
 
 
@@ -166,25 +125,51 @@ if(isset($_GET['apicall'])){
             break;
 
 
-        //the delete operation
-        case 'deletehero':
 
-            //for the delete operation we are getting a GET parameter from the url having the id of the record to be deleted
-            if(isset($_GET['id'])){
-                $db = new DbOperation();
-                if($db->deleteHero($_GET['id'])){
-                    $response['error'] = false;
-                    $response['message'] = 'Hero deleted successfully';
-                    $response['heroes'] = $db->getHeroes();
-                }else{
-                    $response['error'] = true;
-                    $response['message'] = 'Some error occurred please try again';
-                }
+
+        //the UPDATE operation
+        case 'updateProfile':
+            isTheseParametersAvailable(array('firstName','lastName','email','password','age', 'covidStatusId'));
+            $db = new DbOperation();
+            $result = $db->updateProfile(
+                $_POST['fistName'],
+                $_POST['lastName'],
+                $_POST['email'],
+                $_POST['password'],
+                $_POST['age'],
+                $_POST['covidStatusId']
+            );
+
+            if($result){
+                $response['error'] = false;
+                $response['message'] = 'Profile updated successfully';
+
             }else{
                 $response['error'] = true;
-                $response['message'] = 'Nothing to delete, provide an id please';
+                $response['message'] = 'Some error occurred please try again';
             }
             break;
+
+        //the UPDATE operation
+        case 'changePassword':
+            isTheseParametersAvailable(array('password'));
+            $db = new DbOperation();
+            $result = $db->changePassword(
+                $_POST['password']
+            );
+
+            if($result){
+                $response['error'] = false;
+                $response['message'] = 'Password updated successfully';
+
+            }else{
+                $response['error'] = true;
+                $response['message'] = 'Some error occurred please try again';
+            }
+            break;
+
+
+
     }
 
 }else{

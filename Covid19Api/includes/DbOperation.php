@@ -117,19 +117,5 @@ class DbOperation
             return true;
         return false;
     }
-
-
-
-    /*
-    * The delete operation
-    * When this method is called record is deleted for the given id
-    */
-    function deleteHero($id){
-        $stmt = $this->con->prepare("DELETE FROM heroes WHERE id = ? ");
-        $stmt->bind_param("i", $id);
-        if($stmt->execute())
-            return true;
-
-        return false;
-    }
+    
 }

@@ -2,8 +2,8 @@
 
 //Database name, username, password will locate there.
 
-define('DB_HOST', '94.199.200.90');
-define('DB_USER', 'berk6685_capston');
-define('DB_PASS', '4a@T8w!!');
-define('DB_NAME', 'berk6685_capstone_db');
+define('DB_HOST', 'localhost');
+define('DB_USER', 'root');
+define('DB_PASS', '');
+define('DB_NAME', 'covid19capstone');
 
