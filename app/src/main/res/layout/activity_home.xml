@@ -6,6 +6,20 @@
     android:layout_height="match_parent"
     tools:context=".HomeActivity">
 
+    <TextView
+        android:id="@+id/txtSignOut"
+        android:layout_width="75dp"
+        android:layout_height="27dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="16dp"
+        android:onClick="SignOut"
+        android:text="Sign Out"
+        android:textAlignment="center"
+        android:textColor="?android:textColorPrimary"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <Button
         android:id="@+id/btnConfirmedCases2"
         android:layout_width="164dp"
@@ -36,7 +50,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.428"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtTitle6"
+        app:layout_constraintTop_toBottomOf="@+id/txtHomeTitle"
         tools:ignore="DuplicateSpeakableTextCheck" />
 
     <Button
@@ -57,15 +71,15 @@
         tools:ignore="DuplicateSpeakableTextCheck" />
 
     <TextView
-        android:id="@+id/txtTitle6"
+        android:id="@+id/txtHomeTitle"
         android:layout_width="253dp"
         android:layout_height="44dp"
         android:layout_marginStart="36dp"
         android:layout_marginTop="24dp"
-        android:text="Hi, Berke Yağız Sevim"
+        android:text="Welcome"
         android:textAlignment="textStart"
         android:textColor="?android:textColorPrimary"
-        android:textSize="24sp"
+        android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

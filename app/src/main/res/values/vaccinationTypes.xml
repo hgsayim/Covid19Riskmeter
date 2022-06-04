@@ -3,8 +3,7 @@
     <string-array name="vaccinationTypes">
         <item>Not vaccinated</item>
         <item>1 dose</item>
-        <item>2 doses</item>
-        <item>3+ doses</item>
+        <item>Multiple doses</item>
     </string-array>
 
 </resources>

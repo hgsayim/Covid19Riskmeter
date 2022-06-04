@@ -7,7 +7,7 @@
     tools:context=".CompleteProfileActivity">
 
     <Button
-        android:id="@+id/btnContinue2"
+        android:id="@+id/btnComplete"
         android:layout_width="353dp"
         android:layout_height="64dp"
         android:layout_marginStart="29dp"
@@ -17,11 +17,11 @@
         android:text="@string/complete"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/switch1"
+        app:layout_constraintTop_toBottomOf="@+id/switchTobacco"
         tools:ignore="DuplicateSpeakableTextCheck" />
 
     <Spinner
-        android:id="@+id/spnGender4"
+        android:id="@+id/spnCovid"
         android:layout_width="320dp"
         android:layout_height="59dp"
         android:layout_marginStart="29dp"
@@ -46,7 +46,7 @@
         android:textColor="?android:textColorPrimary"
         android:textSize="16sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/spnGender2" />
+        app:layout_constraintTop_toBottomOf="@+id/spnBlood" />
 
     <TextView
         android:id="@+id/txtInfo8"
@@ -58,10 +58,10 @@
         android:textColor="?android:textColorPrimary"
         android:textSize="16sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/spnGender3" />
+        app:layout_constraintTop_toBottomOf="@+id/spnVaccination" />
 
     <Spinner
-        android:id="@+id/spnGender3"
+        android:id="@+id/spnVaccination"
         android:layout_width="320dp"
         android:layout_height="61dp"
         android:layout_marginStart="29dp"
@@ -89,7 +89,7 @@
         app:layout_constraintTop_toBottomOf="@+id/txtInfo5" />
 
     <Spinner
-        android:id="@+id/spnGender2"
+        android:id="@+id/spnBlood"
         android:layout_width="320dp"
         android:layout_height="60dp"
         android:layout_marginStart="29dp"
@@ -130,15 +130,15 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Switch
-        android:id="@+id/switch1"
+        android:id="@+id/switchTobacco"
         android:layout_width="350dp"
         android:layout_height="48dp"
         android:layout_marginStart="29dp"
         android:layout_marginTop="20dp"
         android:layout_marginEnd="29dp"
         android:minHeight="48dp"
-        android:text="@string/i_ve_had_covid_before"
+        android:text="I use tobacco products"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/spnGender4" />
+        app:layout_constraintTop_toBottomOf="@+id/spnCovid" />
 </androidx.constraintlayout.widget.ConstraintLayout>
