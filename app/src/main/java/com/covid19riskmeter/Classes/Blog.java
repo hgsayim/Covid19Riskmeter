@@ -10,6 +10,7 @@ public class Blog {
     private String content;
     private String coverPhoto;
     public static List<Blog> list;
+    public static int current;
 
     public Blog(int id, String createdAt, String title, String content, String coverPhoto) {
         this.id = id;
@@ -17,6 +18,8 @@ public class Blog {
         this.title = title;
         this.content = content;
         this.coverPhoto = coverPhoto;
+        list.add(this);
+
     }
 
     public int getId() {

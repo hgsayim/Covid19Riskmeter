@@ -28,7 +28,6 @@ public class CalculateActivity extends AppCompatActivity {
         swTobacco = (Switch) findViewById(R.id.switchTobacco2);
         txtAge = (EditText) findViewById(R.id.txtAge2);
         txtInfo  = findViewById(R.id.txtCalculateInfo);
-        Log.d("age---------", txtAge.getText().toString());
 
     }
     public void calculateRisk(View view){

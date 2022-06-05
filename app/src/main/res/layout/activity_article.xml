@@ -6,23 +6,9 @@
     android:layout_height="match_parent"
     tools:context=".ArticleActivity">
 
-    <TextView
-        android:id="@+id/txtInfo11"
-        android:layout_width="354dp"
-        android:layout_height="36dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="22dp"
-        android:layout_marginEnd="32dp"
-        android:text="LEARN: How to protect yourself from COVID-19?"
-        android:textColor="?android:textColorPrimary"
-        android:textSize="16sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView2" />
-
     <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="409dp"
+        android:id="@+id/imgArticle"
+        android:layout_width="match_parent"
         android:layout_height="219dp"
         android:scaleType="fitXY"
         app:layout_constraintEnd_toEndOf="parent"
@@ -30,15 +16,38 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/vaccination_image" />
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="354dp"
-        android:layout_height="400dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="32dp"
-        android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sodales et nisl id interdum. Vestibulum auctor felis eget ante venenatis, sit amet dapibus urna ullamcorper. Ut dictum sit amet lorem a lacinia. Integer sem nisi, dapibus consequat magna ut, consectetur congue diam. Nullam ut mi sed sapien molestie finibus in eget purus. Aenean vehicula nisl lorem, et interdum tellus auctor id. Vivamus iaculis dictum diam, sed semper est ornare quis.  Nunc lacus odio, finibus nec massa pharetra, pretium sagittis nibh. Nulla feugiat felis at metus aliquam, ac suscipit lacus aliquet. Aenean convallis velit ut magna ultricies vestibulum. Pellentesque varius, lorem ut fermentum accumsan, felis odio gravida risus, at porta lectus velit in arcu. Integer blandit at tortor vitae pellentesque. Phasellus aliquam non eros in sodales. Phasellus id dictum ligula, sed fermentum elit. Etiam feugiat augue eu felis sollicitudin posuere et eu turpis. Aliquam pretium magna nisi, vel mollis neque vestibulum sed. Integer placerat, odio sed commodo ullamcorper, ipsum turpis ultrices enim, quis dapibus erat ante ut dui. Cras bibendum leo nec purus vulputate, facilisis ullamcorper felis laoreet. Morbi sit amet dui sit amet metus bibendum gravida nec a est. Nullam pellentesque bibendum tempus."
+    <ScrollView
+        android:layout_width="409dp"
+        android:layout_height="510dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtInfo11" />
+        app:layout_constraintTop_toBottomOf="@+id/imgArticle">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/txtArticleTitle"
+                android:layout_width="354dp"
+                android:layout_height="36dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="22dp"
+                android:layout_marginEnd="32dp"
+                android:text="LEARN: How to protect yourself from COVID-19?"
+                android:textColor="?android:textColorPrimary"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/txtArticleText"
+                android:layout_width="354dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="32dp"
+                android:layout_marginEnd="32dp"
+                android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sodales et nisl id interdum. Vestibulum auctor felis eget ante venenatis, sit amet dapibus urna ullamcorper. Ut dictum sit amet lorem a lacinia. Integer sem nisi, dapibus consequat magna ut, consectetur congue diam. Nullam ut mi sed sapien molestie finibus in eget purus. Aenean vehicula nisl lorem, et interdum tellus auctor id. Vivamus iaculis dictum diam, sed semper est ornare quis.  Nunc lacus odio, finibus nec massa pharetra, pretium sagittis nibh. Nulla feugiat felis at metus aliquam, ac suscipit lacus aliquet. Aenean convallis velit ut magna ultricies vestibulum. Pellentesque varius, lorem ut fermentum accumsan, felis odio gravida risus, at porta lectus velit in arcu. Integer blandit at tortor vitae pellentesque. Phasellus aliquam non eros in sodales. Phasellus id dictum ligula, sed fermentum elit. Etiam feugiat augue eu felis sollicitudin posuere et eu turpis. Aliquam pretium magna nisi, vel mollis neque vestibulum sed. Integer placerat, odio sed commodo ullamcorper, ipsum turpis ultrices enim, quis dapibus erat ante ut dui. Cras bibendum leo nec purus vulputate, facilisis ullamcorper felis laoreet. Morbi sit amet dui sit amet metus bibendum gravida nec a est. Nullam pellentesque bibendum tempus." />
+        </LinearLayout>
+    </ScrollView>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

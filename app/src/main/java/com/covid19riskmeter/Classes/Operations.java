@@ -8,8 +8,14 @@ import android.util.Log;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.covid19riskmeter.CreateProfileActivity;
+import androidx.annotation.NonNull;
 
+import com.bumptech.glide.Glide;
+import com.covid19riskmeter.HomeActivity;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.Query;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
@@ -79,9 +85,7 @@ public class Operations {
         else
             genderVal=1;
         double result = (0.15 *ageVal) + (0.37*vacVal) + (0.09*tobaccoVal) - (0.17*genderVal);
-        Log.d("result----- ", result +"");
         double _result = result*100*0.7;
-        Log.d("_result----- ", _result+"");
         if(_result<0)
             _result=0;
         return (int) _result;
@@ -96,9 +100,6 @@ public class Operations {
 
         if (removeHistory)
             current.finish();
-    }
-    public static void getBlogs(){
-
     }
 
 }
