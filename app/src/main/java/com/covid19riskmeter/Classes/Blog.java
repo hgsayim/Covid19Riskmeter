@@ -1,5 +1,7 @@
 package com.covid19riskmeter.Classes;
 
+import java.util.List;
+
 public class Blog {
 
     private int id;
@@ -7,6 +9,7 @@ public class Blog {
     private String title;
     private String content;
     private String coverPhoto;
+    public static List<Blog> list;
 
     public Blog(int id, String createdAt, String title, String content, String coverPhoto) {
         this.id = id;

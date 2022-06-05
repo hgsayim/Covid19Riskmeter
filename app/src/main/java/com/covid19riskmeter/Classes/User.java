@@ -12,10 +12,19 @@ public class User {
     public String blood;
     public String gender;
     public String vaccination;
+    public int risk;
     public boolean tobacco;
     public int age;
     public int profileLevel;
     public static User me;
+
+    public int getRisk() {
+        return risk;
+    }
+
+    public void setRisk(int risk) {
+        this.risk = risk;
+    }
     public String getName() {
         return name;
     }

@@ -24,11 +24,11 @@ public class MainActivity extends AppCompatActivity {
 
         //Database.auth.signOut();
         if(Database.auth.getCurrentUser()!=null)
-            Operations.moveToPage(this,HomeActivity.class,false);
+            Operations.moveToPage(this,HomeActivity.class,true);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        double userRisk = Operations.calculateRisk("80","Not vaccinated",true,"Male");
-        Log.d("RISK--------------", userRisk + "");
+
+
     }
 
 

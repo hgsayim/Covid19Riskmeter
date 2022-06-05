@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.covid19riskmeter">
+    package="com.covid19riskmeter" >
 
     <uses-permission android:name="android.permission.INTERNET" />
 
@@ -10,15 +10,20 @@
         android:label="Riskmeter"
         android:roundIcon="@drawable/icon"
         android:supportsRtl="true"
-        android:theme="@style/Theme.Covid19Riskmeter">
+        android:theme="@style/Theme.Covid19Riskmeter" >
+        <activity
+            android:name=".BlogActivity"
+            android:exported="false"
+            android:label="@string/title_activity_blog"
+            android:theme="@style/Theme.Covid19Riskmeter.NoActionBar" />
+        <activity
+            android:name=".CalculateActivity"
+            android:exported="false" />
         <activity
             android:name=".RiskmeterActivity"
             android:exported="false" />
         <activity
             android:name=".ArticleActivity"
-            android:exported="false" />
-        <activity
-            android:name=".BlogActivity"
             android:exported="false" />
         <!--
              TODO: Before you run your application, you need a Google Maps API key.
@@ -59,7 +64,7 @@
             android:exported="false" />
         <activity
             android:name=".MainActivity"
-            android:exported="true">
+            android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

@@ -7,6 +7,20 @@
     tools:context=".LoginActivity">
 
     <TextView
+        android:id="@+id/txtInfo2"
+        android:layout_width="258dp"
+        android:layout_height="56dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="46dp"
+        android:text="Please enter your registered email and password."
+        android:textColor="?android:textColorPrimary"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtTitle2" />
+
+
+
+    <TextView
         android:id="@+id/txtTitle2"
         android:layout_width="413dp"
         android:layout_height="89dp"
@@ -24,7 +38,7 @@
         android:layout_width="353dp"
         android:layout_height="59dp"
         android:layout_marginStart="29dp"
-        android:layout_marginTop="167dp"
+        android:layout_marginTop="140dp"
         android:layout_marginEnd="29dp"
         android:ems="10"
         android:hint="@string/email"
@@ -57,7 +71,7 @@
         android:layout_marginTop="55dp"
         android:layout_marginEnd="29dp"
         android:text="@string/sign_in"
-        android:onClick="Log_in"
+        android:onClick="SignIn"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtInfo3"
@@ -79,4 +93,5 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtLoginPass" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

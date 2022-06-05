@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 import com.covid19riskmeter.Classes.Database;
 import com.covid19riskmeter.Classes.Operations;
@@ -21,11 +22,13 @@ import kotlin.text.Regex;
 
 public class HomeActivity extends AppCompatActivity {
     public TextView txtTitle;
+    private Button btnRiskInfo;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
         txtTitle = (TextView) findViewById(R.id.txtHomeTitle);
+        btnRiskInfo = (Button) findViewById(R.id.btnRiskInfo);
         FirebaseUser user = Database.auth.getCurrentUser();
         Query query = Database.database.child("users").orderByChild("id").equalTo(user.getUid());
         query.get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
@@ -37,25 +40,32 @@ public class HomeActivity extends AppCompatActivity {
                 else {
                     String json = String.valueOf(task.getResult().getValue()).substring(30);
                     int profileLevel = Integer.parseInt(json.split("profileLevel=")[1].split(",")[0]);
-                    String email_notparsed = json.split("email=")[1].split(",")[0];
-                    String email;
-                    if (email_notparsed.endsWith("\\}")){
-                        email = email_notparsed.split("\\}")[0];
-                    }else{
-                        email = email_notparsed;
-                    }
+                    String email = json.split("email=")[1].split(",")[0];
+                    if (email.endsWith("\\}")) // if email object is at the end of the json
+                        email = email.split("\\}")[0];
+
                     String pass = json.split("password=")[1].split(",")[0];
                     User.me = new User(user.getUid(),email,pass,null,0,0,false,null,null);
-
-
+                    Log.d("json----- ", json);
                     if(profileLevel==0){ //  no name, age , gender, --just have mail and pass
-                        Log.d("LEVEL0000000 email----- ", email);
+
                         Operations.moveToPage(HomeActivity.this,CreateProfileActivity.class,true);
                     }else if(profileLevel==1){ // no blood type, tobacco, vaccination, --- just have mail, pass, name
                         setProfile(json);
                         Operations.moveToPage(HomeActivity.this,CompleteProfileActivity.class,true);
                     }else{ // full profile
                         setProfile(json);
+                        String strTobacco = json.split("tobacco=")[1].split(",")[0];
+                        if(strTobacco.equals("true"))
+                            User.me.tobacco=true;
+                        else
+                            User.me.tobacco=false;
+                        String vaccination = json.split("vaccination=")[1].split("\\}")[0];
+                        String blood = json.split("blood=")[1].split(",")[0];
+                        User.me.setBlood(blood);
+                        User.me.setVaccination(vaccination);
+                        int user_risk = Operations.calculateRisk(User.me.age,User.me.vaccination,User.me.tobacco,User.me.gender);
+                        btnRiskInfo.setText("Your potential risk: " + user_risk + "%");
                         txtTitle.setText("Hi, " + User.me.name);
                     }
 
@@ -72,6 +82,9 @@ public class HomeActivity extends AppCompatActivity {
 
 
     }
+    public void moveToBlogPage(View view){
+        Operations.moveToPage(this,BlogActivity.class,false);
+    }
     private void setProfile(String json){
         String name = json.split("name=")[1].split(",")[0];
         String gender = json.split("gender=")[1].split(",")[0];
@@ -86,14 +99,14 @@ public class HomeActivity extends AppCompatActivity {
         Operations.moveToPage(this,MainActivity.class,true);
 
     }
+    public void moveToCalculatePage(View view){
+        Operations.moveToPage(this,CalculateActivity.class,false);
+    }
     public void moveToMapPage(View view){
-        Intent i = new Intent(this,MapsActivity.class);
-        startActivity(i);
+        Operations.moveToPage(this,MapsActivity.class,false);
     }
     public void moveToArticlePage(View view){
         // article = Db.find article title,image,description
-
-        Intent i = new Intent(this,ArticleActivity.class);
-        startActivity(i);
+        Operations.moveToPage(this,ArticleActivity.class,false);
     }
 }

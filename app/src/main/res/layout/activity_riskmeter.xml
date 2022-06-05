@@ -7,18 +7,45 @@
     tools:context=".RiskmeterActivity">
 
     <TextView
+        android:id="@+id/txtRisk"
+        android:layout_width="413dp"
+        android:layout_height="155dp"
+        android:layout_marginTop="31dp"
+        android:layout_marginBottom="87dp"
+        android:text="80%"
+        android:textAlignment="center"
+        android:textColor="?android:textColorPrimary"
+        android:textSize="96sp"
+        app:layout_constraintBottom_toTopOf="@+id/txtInfo9"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtInfo12" />
+
+    <TextView
+        android:id="@+id/txtInfo12"
+        android:layout_width="361dp"
+        android:layout_height="47dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="34dp"
+        android:text="Calculated potential risk:"
+        android:textColor="?android:textColorPrimary"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtTitle9" />
+
+    <TextView
         android:id="@+id/txtInfo10"
         android:layout_width="354dp"
         android:layout_height="36dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="7dp"
-        android:layout_marginEnd="32dp"
+        android:layout_marginStart="29dp"
+        android:layout_marginEnd="29dp"
+        android:layout_marginBottom="60dp"
         android:text="LEARN: How to protect yourself from COVID-19?"
         android:textColor="?android:textColorPrimary"
         android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cardView" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView"
@@ -26,13 +53,14 @@
         android:layout_height="141dp"
         android:layout_marginStart="32dp"
         android:layout_marginEnd="32dp"
+        android:layout_marginBottom="15dp"
         app:cardCornerRadius="15dp"
+        app:layout_constraintBottom_toTopOf="@+id/txtInfo10"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtInfo9">
+        app:layout_constraintStart_toStartOf="parent">
 
         <ImageView
-            android:id="@+id/imageView"
+            android:id="@+id/imgBlog"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_marginStart="0dp"
@@ -51,12 +79,12 @@
         android:layout_width="301dp"
         android:layout_height="40dp"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="36dp"
-        android:text="Be aware of you are in risky group, so:"
+        android:layout_marginBottom="5dp"
+        android:text="Be aware of your risks, so:"
         android:textColor="?android:textColorPrimary"
         android:textSize="16sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnContinue4" />
+        app:layout_constraintBottom_toTopOf="@+id/cardView"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/txtTitle9"
@@ -72,20 +100,4 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
-        android:id="@+id/btnContinue4"
-        android:layout_width="346dp"
-        android:layout_height="137dp"
-        android:layout_marginStart="29dp"
-        android:layout_marginTop="23dp"
-        android:layout_marginEnd="29dp"
-        android:focusable="false"
-        android:text="Seems like you're in 75% risky group."
-        android:textAllCaps="false"
-        android:textSize="20sp"
-        app:cornerRadius="15dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtTitle9"
-        tools:ignore="DuplicateSpeakableTextCheck" />
 </androidx.constraintlayout.widget.ConstraintLayout>

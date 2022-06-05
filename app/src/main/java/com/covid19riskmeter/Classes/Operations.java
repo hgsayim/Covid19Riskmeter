@@ -15,7 +15,7 @@ import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 
 public class Operations {
-
+    public static int calculated_risk;
     public static void errorLabel(TextView label, String errorLine,int seconds){
         if(label.getCurrentTextColor()!=Color.RED){
             final String firstLine = label.getText().toString();
@@ -52,22 +52,21 @@ public class Operations {
         Toast toast = Toast.makeText(context, text, duration);
         toast.show();
     }
-    public static double calculateRisk(String age, String vaccination, boolean tobacco, String gender){
-        int age_int = Integer.parseInt(age);
+    public static int calculateRisk(int age, String vaccination, boolean tobacco, String gender){
         int ageVal,vacVal,tobaccoVal,genderVal;
-        if (age_int>=64)
+        if (age>=64)
             ageVal=4;
-        else if (age_int>=54)
+        else if (age>=54)
             ageVal=3;
-        else if(age_int>=34)
+        else if(age>=34)
             ageVal=2;
-        else if(age_int>=25)
+        else if(age>=25)
             ageVal=1;
         else
             ageVal=0;
-        if(vaccination=="Not vaccinated")
+        if(vaccination.equals("Not vaccinated"))
             vacVal=2;
-        else if(vaccination=="1 dose")
+        else if(vaccination.equals("1 dose"))
             vacVal=1;
         else
             vacVal=0;
@@ -75,11 +74,17 @@ public class Operations {
             tobaccoVal=1;
         else
             tobaccoVal=0;
-        if(gender=="Male")
+        if(gender.equals("Male"))
             genderVal=0;
         else
             genderVal=1;
-        return (0.15 *ageVal) + (0.37*vacVal) + (0.09*tobaccoVal) - (0.17*genderVal);
+        double result = (0.15 *ageVal) + (0.37*vacVal) + (0.09*tobaccoVal) - (0.17*genderVal);
+        Log.d("result----- ", result +"");
+        double _result = result*100*0.7;
+        Log.d("_result----- ", _result+"");
+        if(_result<0)
+            _result=0;
+        return (int) _result;
 
     }
     public static void moveToPage(Activity current,Class to,boolean removeHistory){
@@ -91,6 +96,9 @@ public class Operations {
 
         if (removeHistory)
             current.finish();
+    }
+    public static void getBlogs(){
+
     }
 
 }

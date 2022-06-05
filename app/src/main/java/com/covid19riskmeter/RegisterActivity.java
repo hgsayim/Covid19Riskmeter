@@ -8,6 +8,7 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -24,6 +25,7 @@ import com.google.firebase.auth.FirebaseUser;
 public class RegisterActivity extends AppCompatActivity {
     EditText email,pass1,pass2;
     TextView info;
+    Button btnRegister;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,15 +35,18 @@ public class RegisterActivity extends AppCompatActivity {
         pass1 = (EditText) findViewById(R.id.txtPass);
         pass2 = (EditText) findViewById(R.id.txtPass2);
         info = (TextView) findViewById(R.id.txtInfo);
+        btnRegister = (Button) findViewById(R.id.btnRegister);
 
 
     }
     public void SignUp(View view){
+
         String pass = pass1.getText().toString();
         String _pass = pass2.getText().toString();
         String _email = email.getText().toString();
         if(_email.contains("@") & _email.length()>=5){
             if (pass.equals(_pass) & pass.length()>=8){
+                btnRegister.setEnabled(false);
                 createUser(_email,pass);
 
             }else{
@@ -78,12 +83,14 @@ public class RegisterActivity extends AppCompatActivity {
 
                                             }
                                             else {
+                                                btnRegister.setEnabled(true);
                                                 Operations.errorLabel(info,"This email address is used by another user.",3);
                                             }
                                         }
                                     });
                         } else {
                             Operations.errorLabel(info,"This email address is used by another user.",3);
+                            btnRegister.setEnabled(true);
                         }
 
                     }
