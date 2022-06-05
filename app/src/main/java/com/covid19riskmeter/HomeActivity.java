@@ -3,8 +3,6 @@ package com.covid19riskmeter;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Intent;
-import android.media.Image;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -24,9 +22,6 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.Query;
 
 import java.util.ArrayList;
-import java.util.List;
-
-import kotlin.text.Regex;
 
 public class HomeActivity extends AppCompatActivity {
     public TextView txtTitle;
@@ -38,7 +33,7 @@ public class HomeActivity extends AppCompatActivity {
         setContentView(R.layout.activity_home);
         txtTitle = (TextView) findViewById(R.id.txtHomeTitle);
         btnRiskInfo = (Button) findViewById(R.id.btnRiskInfo);
-        imgBlog = (ImageView) findViewById(R.id.imgBlog);
+        imgBlog = (ImageView) findViewById(R.id.imgBlog2);
         FirebaseUser user = Database.auth.getCurrentUser();
         //started to get user info
         Query query = Database.database.child("users").orderByChild("id").equalTo(user.getUid());

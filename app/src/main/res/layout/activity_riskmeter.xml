@@ -34,13 +34,14 @@
         app:layout_constraintTop_toBottomOf="@+id/txtTitle9" />
 
     <TextView
-        android:id="@+id/txtInfo10"
+        android:id="@+id/txtBlogTitle2"
         android:layout_width="354dp"
         android:layout_height="36dp"
-        android:layout_marginStart="29dp"
+        android:layout_marginStart="40dp"
         android:layout_marginEnd="29dp"
         android:layout_marginBottom="60dp"
-        android:text="LEARN: How to protect yourself from COVID-19?"
+        android:onClick="goToArticle"
+        android:text="LEARN: How to Protect Yourself and Others?"
         android:textColor="?android:textColorPrimary"
         android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -53,25 +54,26 @@
         android:layout_height="141dp"
         android:layout_marginStart="32dp"
         android:layout_marginEnd="32dp"
-        android:layout_marginBottom="15dp"
+        android:layout_marginBottom="10dp"
         app:cardCornerRadius="15dp"
-        app:layout_constraintBottom_toTopOf="@+id/txtInfo10"
+        app:layout_constraintBottom_toTopOf="@+id/txtBlogTitle2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent">
 
         <ImageView
-            android:id="@+id/imgBlog"
+            android:id="@+id/imgBlog2"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_marginStart="0dp"
             android:layout_marginTop="0dp"
             android:layout_marginEnd="0dp"
+            android:onClick="goToArticle"
             android:scaleType="fitXY"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/txtTitle8"
             app:shapeAppearanceOverlay="@style/circleImageViewStyle"
-            app:srcCompat="@drawable/vaccination_image" />
+            app:srcCompat="@drawable/covid" />
     </androidx.cardview.widget.CardView>
 
     <TextView

@@ -3,9 +3,11 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.graphics.Color;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.covid19riskmeter.Classes.Blog;
 import com.covid19riskmeter.Classes.Operations;
 
 public class RiskmeterActivity extends AppCompatActivity {
@@ -25,5 +27,10 @@ public class RiskmeterActivity extends AppCompatActivity {
             txtRisk.setTextColor(Color.parseColor("#3483eb"));
         else
             txtRisk.setTextColor(Color.GREEN);
+    }
+
+    public void goToArticle(View view){
+        Blog.current=0;
+        Operations.moveToPage(this,ArticleActivity.class,false);
     }
 }

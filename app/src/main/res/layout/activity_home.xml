@@ -124,7 +124,7 @@
         app:layout_constraintTop_toBottomOf="@+id/txtTitle8">
 
         <ImageView
-            android:id="@+id/imgBlog"
+            android:id="@+id/imgBlog2"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginStart="0dp"
