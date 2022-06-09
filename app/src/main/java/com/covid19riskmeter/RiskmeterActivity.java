@@ -30,7 +30,7 @@ public class RiskmeterActivity extends AppCompatActivity {
     }
 
     public void goToArticle(View view){
-        Blog.current=0;
+        Blog.current=Blog.list.size()-1;
         Operations.moveToPage(this,ArticleActivity.class,false);
     }
 }

@@ -58,7 +58,7 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if(task.isSuccessful()){
-                    moveToHomePage();
+                    Operations.defineLaunchScreen(LoginActivity.this);
                 }else{
                     btnLogin.setEnabled(true);
                     Operations.errorLabel(txtInfo,"Email and password does not matched. Please check your information.",3);

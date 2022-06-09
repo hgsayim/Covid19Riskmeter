@@ -11,6 +11,8 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import com.covid19riskmeter.Classes.Blog;
 
+import java.util.Collections;
+
 public class ArticleActivity extends AppCompatActivity {
     TextView txtTitle,txtArticle;
     ImageView imgArticle;

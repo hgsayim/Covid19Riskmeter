@@ -37,6 +37,6 @@ public class CompleteProfileActivity extends AppCompatActivity {
         Database.update_one(userid,"tobacco",User.me.tobacco);
         User.me.setProfileLevel(2);
         Database.update_one(userid,"profileLevel",User.me.getProfileLevel());
-        Operations.moveToPage(this,HomeActivity.class,true);
+        Operations.defineLaunchScreen(this);
     }
 }

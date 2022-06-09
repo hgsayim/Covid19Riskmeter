@@ -3,6 +3,7 @@ package com.covid19riskmeter;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -11,6 +12,10 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import com.covid19riskmeter.Classes.Blog;
 import com.covid19riskmeter.Classes.Operations;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
 public class BlogActivity extends AppCompatActivity {
     LinearLayout blogLayout;
@@ -33,7 +38,7 @@ public class BlogActivity extends AppCompatActivity {
                 img.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        Blog.current=b.getId()-1;
+                        Blog.current=Blog.list.indexOf(b);
                         Operations.moveToPage(BlogActivity.this,ArticleActivity.class,false);
                     }
                 });
